@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -8,56 +10,597 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
-
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1">
    <top>
-      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </BorderPane.margin>
+         <children>
+            <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="5.0">
+               <children>
+                  <Label text="Partidas Jugadas" />
+                  <Label text="0" />
+                  <Separator maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" />
+                  <Label text="Número Caliente:" />
+                  <Label text="5" />
+                  <Separator maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" />
+                  <Label text="Número Frio:" />
+                  <Label text="2" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity">
+               <children>
+                  <HBox alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity">
+                     <children>
+                        <Label fx:id="num3HistLabel" alignment="CENTER" style="-fx-content-display: center; -fx-font-size: 20;" text="28" textAlignment="CENTER">
+                           <graphic>
+                              <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/bola.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Label>
+                        <Label fx:id="num2HistLabel" alignment="CENTER" style="-fx-content-display: center; -fx-font-size: 20;" text="44" textAlignment="CENTER">
+                           <graphic>
+                              <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/bola.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Label>
+                        <Label fx:id="num1HistLabel" alignment="CENTER" style="-fx-content-display: center; -fx-font-size: 20;" text="90" textAlignment="CENTER">
+                           <graphic>
+                              <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/bola.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Label>
+                     </children>
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </HBox>
+                  <Label fx:id="numeroActual" alignment="CENTER" styleClass="bolaPrincipal" text="52" textAlignment="CENTER">
+                     <graphic>
+                        <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/bola.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="5.0">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="80.0" style="-fx-background-color: green;" text="Linea">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="80.0" style="-fx-background-color: green;" text="Bingo">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </VBox>
    </top>
    <center>
-      <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" BorderPane.alignment="CENTER">
+      <GridPane alignment="CENTER" hgap="5.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" styleClass="tablaNumeros" BorderPane.alignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
          <children>
-            <Label alignment="CENTER" style="-fx-content-display: center; -fx-font-size: 35;" text="8" textAlignment="CENTER">
-               <graphic>
-                  <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../../../Downloads/image%20(3).png" />
-                     </image>
-                  </ImageView>
-               </graphic>
+            <Label fx:id="bolaTabla11" contentDisplay="CENTER" styleClass="bola1" text="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <font>
+                  <Font size="10.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="bolaTabla1" contentDisplay="CENTER" styleClass="bola1" text="2" GridPane.columnIndex="1">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla2" contentDisplay="CENTER" styleClass="bola1" text="3" GridPane.columnIndex="2">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla3" contentDisplay="CENTER" styleClass="bola1" text="4" GridPane.columnIndex="3">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla31" contentDisplay="CENTER" styleClass="bola1" text="5" GridPane.columnIndex="4">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla32" contentDisplay="CENTER" styleClass="bola1" text="6" GridPane.columnIndex="5">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla33" contentDisplay="CENTER" styleClass="bola1" text="7" GridPane.columnIndex="6">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla34" contentDisplay="CENTER" styleClass="bola1" text="8" GridPane.columnIndex="7">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla35" contentDisplay="CENTER" styleClass="bola1" text="9" GridPane.columnIndex="8">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36" contentDisplay="CENTER" styleClass="bola1" text="10" GridPane.columnIndex="9">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla361" contentDisplay="CENTER" styleClass="bola1" text="11" GridPane.rowIndex="1">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla3611" contentDisplay="CENTER" styleClass="bola1" text="12" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla3612" contentDisplay="CENTER" styleClass="bola1" text="13" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla3613" contentDisplay="CENTER" styleClass="bola1" text="14" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla3614" contentDisplay="CENTER" styleClass="bola1" text="15" GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla3615" contentDisplay="CENTER" styleClass="bola1" text="16" GridPane.columnIndex="5" GridPane.rowIndex="1">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla3616" contentDisplay="CENTER" styleClass="bola1" text="17" GridPane.columnIndex="6" GridPane.rowIndex="1">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla3617" contentDisplay="CENTER" styleClass="bola1" text="18" GridPane.columnIndex="7" GridPane.rowIndex="1">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla3618" contentDisplay="CENTER" styleClass="bola1" text="19" GridPane.columnIndex="8" GridPane.rowIndex="1">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla3619" contentDisplay="CENTER" styleClass="bola1" text="20" GridPane.columnIndex="9" GridPane.rowIndex="1">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36110" contentDisplay="CENTER" styleClass="bola1" text="21" GridPane.rowIndex="2">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36111" contentDisplay="CENTER" styleClass="bola1" text="22" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36112" contentDisplay="CENTER" styleClass="bola1" text="23" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36113" contentDisplay="CENTER" styleClass="bola1" text="24" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36114" contentDisplay="CENTER" styleClass="bola1" text="25" GridPane.columnIndex="4" GridPane.rowIndex="2">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36115" contentDisplay="CENTER" styleClass="bola1" text="26" GridPane.columnIndex="5" GridPane.rowIndex="2">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36116" contentDisplay="CENTER" styleClass="bola1" text="27" GridPane.columnIndex="6" GridPane.rowIndex="2">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36117" contentDisplay="CENTER" styleClass="bola1" text="28" GridPane.columnIndex="7" GridPane.rowIndex="2">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36118" contentDisplay="CENTER" styleClass="bola1" text="29" GridPane.columnIndex="8" GridPane.rowIndex="2">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36119" contentDisplay="CENTER" styleClass="bola1" text="30" GridPane.columnIndex="9" GridPane.rowIndex="2">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36120" contentDisplay="CENTER" styleClass="bola1" text="31" GridPane.rowIndex="3">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36121" contentDisplay="CENTER" styleClass="bola1" text="32" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36122" contentDisplay="CENTER" styleClass="bola1" text="33" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36123" contentDisplay="CENTER" styleClass="bola1" text="34" GridPane.columnIndex="3" GridPane.rowIndex="3">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36124" contentDisplay="CENTER" styleClass="bola1" text="35" GridPane.columnIndex="4" GridPane.rowIndex="3">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36125" contentDisplay="CENTER" styleClass="bola1" text="36" GridPane.columnIndex="5" GridPane.rowIndex="3">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36126" contentDisplay="CENTER" styleClass="bola1" text="37" GridPane.columnIndex="6" GridPane.rowIndex="3">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36127" contentDisplay="CENTER" styleClass="bola1" text="38" GridPane.columnIndex="7" GridPane.rowIndex="3">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36128" contentDisplay="CENTER" styleClass="bola1" text="39" GridPane.columnIndex="8" GridPane.rowIndex="3">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36129" contentDisplay="CENTER" styleClass="bola1" text="40" GridPane.columnIndex="9" GridPane.rowIndex="3">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36130" contentDisplay="CENTER" styleClass="bola1" text="41" GridPane.rowIndex="4">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36131" contentDisplay="CENTER" styleClass="bola1" text="42" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36132" contentDisplay="CENTER" styleClass="bola1" text="43" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36133" contentDisplay="CENTER" styleClass="bola1" text="44" GridPane.columnIndex="3" GridPane.rowIndex="4">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36134" contentDisplay="CENTER" styleClass="bola1" text="45" GridPane.columnIndex="4" GridPane.rowIndex="4">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36135" contentDisplay="CENTER" styleClass="bola1" text="46" GridPane.columnIndex="5" GridPane.rowIndex="4">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36136" contentDisplay="CENTER" styleClass="bola1" text="47" GridPane.columnIndex="6" GridPane.rowIndex="4">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36137" contentDisplay="CENTER" styleClass="bola1" text="48" GridPane.columnIndex="7" GridPane.rowIndex="4">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36138" contentDisplay="CENTER" styleClass="bola1" text="49" GridPane.columnIndex="8" GridPane.rowIndex="4">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36139" contentDisplay="CENTER" styleClass="bola1" text="50" GridPane.columnIndex="9" GridPane.rowIndex="4">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36140" contentDisplay="CENTER" styleClass="bola1" text="51" GridPane.rowIndex="5">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36141" contentDisplay="CENTER" styleClass="bola1" text="52" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36142" contentDisplay="CENTER" styleClass="bola1" text="53" GridPane.columnIndex="2" GridPane.rowIndex="5">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36143" contentDisplay="CENTER" styleClass="bola1" text="54" GridPane.columnIndex="3" GridPane.rowIndex="5">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36144" contentDisplay="CENTER" styleClass="bola1" text="55" GridPane.columnIndex="4" GridPane.rowIndex="5">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36145" contentDisplay="CENTER" styleClass="bola1" text="56" GridPane.columnIndex="5" GridPane.rowIndex="5">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36146" contentDisplay="CENTER" styleClass="bola1" text="57" GridPane.columnIndex="6" GridPane.rowIndex="5">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36147" contentDisplay="CENTER" styleClass="bola1" text="58" GridPane.columnIndex="7" GridPane.rowIndex="5">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36148" contentDisplay="CENTER" styleClass="bola1" text="59" GridPane.columnIndex="8" GridPane.rowIndex="5">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36149" contentDisplay="CENTER" styleClass="bola1" text="60" GridPane.columnIndex="9" GridPane.rowIndex="5">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36150" contentDisplay="CENTER" styleClass="bola1" text="61" GridPane.rowIndex="6">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36151" contentDisplay="CENTER" styleClass="bola1" text="62" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36152" contentDisplay="CENTER" styleClass="bola1" text="63" GridPane.columnIndex="2" GridPane.rowIndex="6">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36153" contentDisplay="CENTER" styleClass="bola1" text="64" GridPane.columnIndex="3" GridPane.rowIndex="6">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36154" contentDisplay="CENTER" styleClass="bola1" text="65" GridPane.columnIndex="4" GridPane.rowIndex="6">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36155" contentDisplay="CENTER" styleClass="bola1" text="66" GridPane.columnIndex="5" GridPane.rowIndex="6">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36156" contentDisplay="CENTER" styleClass="bola1" text="67" GridPane.columnIndex="6" GridPane.rowIndex="6">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36157" contentDisplay="CENTER" styleClass="bola1" text="68" GridPane.columnIndex="7" GridPane.rowIndex="6">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36158" contentDisplay="CENTER" styleClass="bola1" text="69" GridPane.columnIndex="8" GridPane.rowIndex="6">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36159" contentDisplay="CENTER" styleClass="bola1" text="70" GridPane.columnIndex="9" GridPane.rowIndex="6">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36160" contentDisplay="CENTER" styleClass="bola1" text="71" GridPane.rowIndex="7">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36161" contentDisplay="CENTER" styleClass="bola1" text="72" GridPane.columnIndex="1" GridPane.rowIndex="7">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36162" contentDisplay="CENTER" styleClass="bola1" text="73" GridPane.columnIndex="2" GridPane.rowIndex="7">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36163" contentDisplay="CENTER" styleClass="bola1" text="74" GridPane.columnIndex="3" GridPane.rowIndex="7">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36164" contentDisplay="CENTER" styleClass="bola1" text="75" GridPane.columnIndex="4" GridPane.rowIndex="7">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36165" contentDisplay="CENTER" styleClass="bola1" text="76" GridPane.columnIndex="5" GridPane.rowIndex="7">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36166" contentDisplay="CENTER" styleClass="bola1" text="77" GridPane.columnIndex="6" GridPane.rowIndex="7">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36167" contentDisplay="CENTER" styleClass="bola1" text="78" GridPane.columnIndex="7" GridPane.rowIndex="7">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36168" contentDisplay="CENTER" styleClass="bola1" text="79" GridPane.columnIndex="8" GridPane.rowIndex="7">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36169" contentDisplay="CENTER" styleClass="bola1" text="80" GridPane.columnIndex="9" GridPane.rowIndex="7">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36170" contentDisplay="CENTER" styleClass="bola1" text="81" GridPane.rowIndex="8">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36171" contentDisplay="CENTER" styleClass="bola1" text="82" GridPane.columnIndex="1" GridPane.rowIndex="8">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36172" contentDisplay="CENTER" styleClass="bola1" text="83" GridPane.columnIndex="2" GridPane.rowIndex="8">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36173" contentDisplay="CENTER" styleClass="bola1" text="84" GridPane.columnIndex="3" GridPane.rowIndex="8">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36174" contentDisplay="CENTER" styleClass="bola1" text="85" GridPane.columnIndex="4" GridPane.rowIndex="8">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36175" contentDisplay="CENTER" styleClass="bola1" text="86" GridPane.columnIndex="5" GridPane.rowIndex="8">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36176" contentDisplay="CENTER" styleClass="bola1" text="87" GridPane.columnIndex="6" GridPane.rowIndex="8">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36177" contentDisplay="CENTER" styleClass="bola1" text="88" GridPane.columnIndex="7" GridPane.rowIndex="8">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36178" contentDisplay="CENTER" styleClass="bola1" text="89" GridPane.columnIndex="8" GridPane.rowIndex="8">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="bolaTabla36179" contentDisplay="CENTER" styleClass="bola1" text="90" GridPane.columnIndex="9" GridPane.rowIndex="8">
+               <font>
+                  <Font size="10.0" />
+               </font>
             </Label>
          </children>
-      </HBox>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </BorderPane.margin>
+      </GridPane>
    </center>
-   <bottom>
-      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
-            <GridPane>
-              <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-            </GridPane>
-         </children>
-      </HBox>
-   </bottom>
 </BorderPane>

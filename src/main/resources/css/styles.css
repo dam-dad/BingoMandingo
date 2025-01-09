@@ -1,6 +1,32 @@
 
 .root {
-    -fx-background-image: url("../images/bingoLoco.jpg");
+    -fx-background-image: url("../images/image.png");
     -fx-background-size: cover;
     -fx-background-repeat: no-repeat;
 }
+
+.bolaPrincipal {
+    -fx-content-display: center;
+    -fx-font-size: 40;
+}
+
+.tablaNumeros {
+    -fx-background-color: grey;
+    -fx-background-radius: 10;
+}
+
+.bola1 {
+    -fx-background-color: white;
+    -fx-background-radius: 60; /* Hace el fondo más redondeado */
+    -fx-background-size: 10px 10px; /* Tamaño del fondo */
+    -fx-border-color: #48dccc;
+    -fx-border-width: 3;
+    -fx-border-radius: 60; /* Mantén el mismo radio que el fondo para que coincida */
+    -fx-font-size: 18; /* Aumenta el tamaño del texto */
+    -fx-pref-width: 30px; /* Ancho del Label */
+    -fx-pref-height: 0px; /* Altura del Label */
+    -fx-alignment: center; /* Centra el texto dentro del Label */
+    -fx-margin: 10;
+}
+
+
