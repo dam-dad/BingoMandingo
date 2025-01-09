@@ -12,7 +12,9 @@ public class App extends Application {
         rc = new RootController();
 
         primaryStage.setTitle("Bingo Mandingo");
-        primaryStage.setScene(new Scene(rc.getRoot(), 800, 600));
+        Scene scene = new Scene(rc.getRoot(), 1000, 600);
+        primaryStage.setScene(scene);
+        scene.getStylesheets().add("/css/styles.css");
         primaryStage.show();
 
     }
