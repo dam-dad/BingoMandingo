@@ -16,17 +16,8 @@
 }
 
 .bola1 {
-    -fx-background-color: white;
-    -fx-background-radius: 60; /* Hace el fondo más redondeado */
-    -fx-background-size: 10px 10px; /* Tamaño del fondo */
-    -fx-border-color: #48dccc;
-    -fx-border-width: 3;
-    -fx-border-radius: 60; /* Mantén el mismo radio que el fondo para que coincida */
-    -fx-font-size: 18; /* Aumenta el tamaño del texto */
-    -fx-pref-width: 30px; /* Ancho del Label */
-    -fx-pref-height: 0px; /* Altura del Label */
-    -fx-alignment: center; /* Centra el texto dentro del Label */
-    -fx-margin: 10;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
 }
 
 
