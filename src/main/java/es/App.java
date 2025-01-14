@@ -1,10 +1,13 @@
+package es;
+
+import es.controllers.RootController;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class App extends Application {
 
-    RootController rc;
+    private static RootController rc;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -17,5 +20,9 @@ public class App extends Application {
         scene.getStylesheets().add("/css/styles.css");
         primaryStage.show();
 
+    }
+
+    public static RootController getRc() {
+        return rc;
     }
 }

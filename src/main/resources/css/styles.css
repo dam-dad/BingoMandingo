@@ -1,23 +1,10 @@
 
-.root {
-    -fx-background-image: url("../images/image.png");
-    -fx-background-size: cover;
-    -fx-background-repeat: no-repeat;
-}
 
-.bolaPrincipal {
-    -fx-content-display: center;
-    -fx-font-size: 40;
-}
+/* Game View */
 
-.tablaNumeros {
-    -fx-background-color: grey;
-    -fx-background-radius: 10;
-}
+.gameBordePane {
+    -fx-background-image: url("../images/bingoLoco.jpg");
 
-.bola1 {
-    -fx-font-size: 16px;
-    -fx-font-weight: bold;
 }
 
 
