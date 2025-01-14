@@ -21,6 +21,24 @@
          <children>
             <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity">
                <children>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <ImageView fitHeight="68.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/back.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/bola.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </VBox>
                   <HBox alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity">
                      <children>
                         <Label fx:id="num3HistLabel" alignment="CENTER" style="-fx-content-display: center; -fx-font-size: 20;" text="28" textAlignment="CENTER">
@@ -56,13 +74,6 @@
                      </HBox.margin>
                   </HBox>
                   <Label fx:id="numeroActual" alignment="CENTER" styleClass="bolaPrincipal" text="52" textAlignment="CENTER">
-                     <graphic>
-                        <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/bola.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
