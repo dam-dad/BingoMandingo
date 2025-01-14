@@ -1,4 +1,4 @@
-package es.controllers;
+package es.controllers.Scoreboard;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
