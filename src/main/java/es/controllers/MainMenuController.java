@@ -2,10 +2,12 @@ package es.controllers;
 
 import es.App;
 
+import es.controllers.Scoreboard.NavMenuController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 
 import java.io.IOException;
@@ -17,7 +19,14 @@ public class MainMenuController implements Initializable {
     @FXML
     private BorderPane root;
 
+    @FXML
+    private Button gameButton;
+
+    @FXML
+    private Button scoreButton;
+
     private GameController gc = new GameController();
+    private NavMenuController nc = new NavMenuController();
 
     public MainMenuController() {
         try {
@@ -41,5 +50,10 @@ public class MainMenuController implements Initializable {
     @FXML
     void onGameViewAction(ActionEvent event) {
         App.getRc().getRoot().setCenter(gc.getRoot());
+    }
+
+    @FXML
+    private void onScoreAction() {
+        App.getRc().getRoot().setCenter(nc.getRoot());
     }
 }

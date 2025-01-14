@@ -10,8 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:id="root" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1">
    <top>
       <HBox alignment="CENTER" style="-fx-background-color: red;" BorderPane.alignment="CENTER">
          <children>
@@ -24,9 +23,9 @@
       </HBox>
    </top>
    <center>
-      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+      <TabPane fx:id="patternPane" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
         <tabs>
-          <Tab text="Letras">
+          <Tab fx:id="letterTab" text="Letras">
                <content>
                   <BorderPane prefHeight="200.0" prefWidth="200.0">
                      <center>
@@ -45,7 +44,7 @@
                   </BorderPane>
                </content>
           </Tab>
-          <Tab text="Numeros">
+          <Tab fx:id="numberTab" text="Numeros">
                <content>
                   <BorderPane prefHeight="200.0" prefWidth="200.0">
                      <center>
@@ -61,7 +60,7 @@
                   </BorderPane>
                </content>
           </Tab>
-            <Tab text="Formas">
+            <Tab fx:id="formTab" text="Formas">
                <content>
                   <BorderPane prefHeight="200.0" prefWidth="200.0">
                      <center>
