@@ -1,5 +1,7 @@
 package es.controllers;
 
+import es.App;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -34,5 +36,10 @@ public class GameController implements Initializable {
 
     public BorderPane getRoot() {
         return root;
+    }
+
+    @FXML
+    void onBackButtonAction(ActionEvent event) {
+        App.getRc().getRoot().setCenter(App.getRc().getMmc().getRoot());
     }
 }
