@@ -24,7 +24,7 @@
         <columns>
           <TableColumn fx:id="idcartonColumn" prefWidth="75.0" sortType="DESCENDING" text="Cartón" />
           <TableColumn fx:id="nombrejugadorColumn" prefWidth="75.0" text="Nombre" />
-            <TableColumn fx:id="apellidojugadorColum" prefWidth="75.0" text="Apellido" />
+            <TableColumn fx:id="apellidojugadorColumn" prefWidth="75.0" text="Apellido" />
             <TableColumn fx:id="puntuacionjugadorColumn" prefWidth="75.0" text="Puntuación" />
         </columns>
          <columnResizePolicy>
