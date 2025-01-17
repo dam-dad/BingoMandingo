@@ -4,6 +4,7 @@
 
 .gameBordePane {
     -fx-background-image: url("../images/gameViewBackground.png");
+    -fx-background-size: cover;
 
 }
 

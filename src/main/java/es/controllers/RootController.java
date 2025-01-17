@@ -38,4 +38,8 @@ public class RootController implements Initializable{
     public BorderPane getRoot() {
         return root;
     }
+
+    public MainMenuController getMmc() {
+        return mmc;
+    }
 }
