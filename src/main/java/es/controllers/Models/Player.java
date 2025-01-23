@@ -11,6 +11,7 @@ public class Player {
     private StringProperty nombre;
     private StringProperty apellido;
     private IntegerProperty puntuacion;
+    private Carton carton;
 
     // Constructor
     public Player(int idCarton, String nombre, String apellido, int puntuacion) {
@@ -18,9 +19,18 @@ public class Player {
         this.nombre = new SimpleStringProperty(nombre);
         this.apellido = new SimpleStringProperty(apellido);
         this.puntuacion = new SimpleIntegerProperty(puntuacion);
+        this.carton = null;
     }
 
     // Getters y Setters
+
+    public Carton getCarton() {
+        return carton;
+    }
+
+    public void setCarton(Carton carton) {
+        this.carton = carton;
+    }
     public int getIdCarton() {
         return idCarton.get();
     }
@@ -72,7 +82,7 @@ public class Player {
 
     @Override
     public String toString() {
-        return nombre.get() + " " + apellido.get();
+        return nombre.get() + " " + apellido.get() + (carton != null ? " con Cartón " + carton.getId() : "");
     }
 
 

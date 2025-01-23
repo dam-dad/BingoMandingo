@@ -31,7 +31,6 @@ public class GameController implements Initializable {
 
 
 
-
     }
 
     public BorderPane getRoot() {

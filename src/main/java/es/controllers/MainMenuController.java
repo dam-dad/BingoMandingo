@@ -1,6 +1,7 @@
 package es.controllers;
 
 import es.App;
+import es.controllers.Models.BingoGenerator;
 import es.controllers.Models.Player;
 import es.controllers.Scoreboard.NavMenuController;
 import javafx.event.ActionEvent;
@@ -106,6 +107,29 @@ public class MainMenuController implements Initializable {
                     alertaError.setContentText("Debes añadir al menos un jugador antes de continuar.");
                     alertaError.showAndWait();
                 } else {
+                    try{
+                        BingoGenerator bingoGenerator = new BingoGenerator("src/main/resources/TablasBingo.xlsx");
+
+                        //limpiar excel antes de escribir
+                        bingoGenerator.limpiarExcel();
+
+                        //generar cartones
+                        int numCartones = listaJugadores.getItems().size(); //obtener cantidad jugadores
+                        bingoGenerator.generarCartones(numCartones);
+                        bingoGenerator.guardarCartonesEnExcel();
+
+                        //asignar cartones a cada jugador
+                        for (int i = 0; i< listaJugadores.getItems().size(); i++) {
+
+                             Player player = listaJugadores.getItems().get(i);
+                             player.setCarton(bingoGenerator.getCartones().get(i));
+                            System.out.println("Jugador: " + player.getNombre() + " " + player.getApellido() + " - Cartón asignado: " + player.getCarton().toString());
+
+                        }
+
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
                     // Procesar los jugadores y avanzar
                     listaJugadores.getItems().forEach(jugador -> {
                         System.out.println("Jugador añadido: " + jugador);
@@ -117,6 +141,7 @@ public class MainMenuController implements Initializable {
             }
         });
     }
+
 
 
     @FXML
