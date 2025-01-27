@@ -1,5 +1,6 @@
 package es.controllers.Models;
 
+import org.apache.poi.openxml4j.util.ZipSecureFile;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 import org.apache.poi.xssf.usermodel.XSSFColor;
@@ -21,6 +22,8 @@ public class BingoGenerator {
 
     public BingoGenerator(String filePath) throws IOException {
         this.filePath = filePath;
+        ZipSecureFile.setMinInflateRatio(0.001);
+
         try (FileInputStream fileInputStream = new FileInputStream(filePath)) {
             this.workbook = new XSSFWorkbook(fileInputStream);
             this.sheet = workbook.getSheetAt(0); // Usamos la primera hoja por defecto
