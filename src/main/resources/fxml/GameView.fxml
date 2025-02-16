@@ -21,9 +21,9 @@
                <children>
                   <Button mnemonicParsing="false" onAction="#onBackButtonAction" style="-fx-background-color: transparent;">
                      <graphic>
-                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../images/back.png" />
+                              <Image url="@../images/back-icon.png" />
                            </image>
                         </ImageView>
                      </graphic>
