@@ -868,16 +868,6 @@ public class GameController implements Initializable {
 
         for (Player player : players) {
             Carton carton = player.getCarton();
-<<<<<<< Updated upstream
-            if (carton != null && (carton.comprobarLinea(numerosGuardados) || comprobarColumna(carton, numerosGuardados))) {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Línea o Columna Encontrada");
-                alert.setHeaderText(null);
-                alert.setContentText("Se ha encontrado una línea.\n \nJugador " + player.getNombre().toUpperCase() + " " + player.getNombre().toUpperCase() +  "\nID de cartón: " + carton.getId());
-                alert.showAndWait();
-                lineaEncontrada = true;
-                break;
-=======
             if (carton != null) {
                 // Comprobar líneas
                 int lineaCoincidente = carton.comprobarLineaPosicion(numerosGuardados);
@@ -900,7 +890,6 @@ public class GameController implements Initializable {
                     alert.showAndWait();
                     coincidenciaEncontrada = true;
                 }
->>>>>>> Stashed changes
             }
         }
 
