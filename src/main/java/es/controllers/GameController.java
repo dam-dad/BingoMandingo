@@ -794,7 +794,7 @@ public class GameController implements Initializable {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("¡BINGO!");
                 alert.setHeaderText(null);
-                alert.setContentText("¡BINGO! El jugador con el ID de cartón: " + carton.getId() + " ha completado el cartón.");
+                alert.setContentText("¡BINGO! El jugador " + player.getNombre() + " " + player.getApellido() +  " con el ID de cartón: " + carton.getId() + " ha completado el cartón.");
                 alert.showAndWait();
                 bingoEncontrado = true;
             }
