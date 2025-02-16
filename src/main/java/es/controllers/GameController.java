@@ -672,4 +672,14 @@ public class GameController implements Initializable {
             label.setGraphic(imageView);
         }
     }
+
+    @FXML
+    void onComprobarBingoAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void onComprobarLineaAction(ActionEvent event) {
+
+    }
 }
