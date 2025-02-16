@@ -299,6 +299,12 @@ public class GameController implements Initializable {
     private Label num3HistLabel;
 
     @FXML
+    private Label num4HistLabel;
+
+    @FXML
+    private Label num5HistLabel;
+
+    @FXML
     private Label numeroActual;
 
     @FXML
@@ -338,6 +344,8 @@ public class GameController implements Initializable {
         int nuevoNumero = generarNumeroUnico();
 
         // Actualizar las etiquetas del historial
+        num5HistLabel.setText(num4HistLabel.getText());
+        num4HistLabel.setText(num3HistLabel.getText());
         num3HistLabel.setText(num2HistLabel.getText());
         num2HistLabel.setText(num1HistLabel.getText());
         num1HistLabel.setText(numeroActual.getText());

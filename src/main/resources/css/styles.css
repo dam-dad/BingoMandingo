@@ -3,8 +3,9 @@
 /* Game View */
 
 .gameBordePane {
-    -fx-background-image: url("../images/gameViewBackground.png");
+    -fx-background-image: url("../images/mainMenu/fondoDesenfocado.png");
     -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
 }
 
 
@@ -40,6 +41,115 @@
     -fx-background-color: #357ABD; /* Azul más oscuro */
     -fx-effect: none;
 }
+
+
+/* Estilo para los botones con borde blanco */
+.bingoButton {
+    -fx-background-color: #FFC107; /* Amarillo */
+    -fx-text-fill: white; /* Texto en blanco */
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-border-width: 2px;
+    -fx-border-color: white; /* Borde blanco */
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.15), 5, 0, 2, 2);
+    -fx-transition: 0.3s;
+}
+
+.bingoButton:hover {
+    -fx-background-color: #FFB300; /* Amarillo más vibrante */
+    -fx-effect: dropshadow(three-pass-box, rgba(255, 255, 255, 0.6), 8, 0, 3, 3); /* Resplandor blanco */
+}
+
+.bingoButton:pressed {
+    -fx-background-color: #DB9D00; /* Amarillo más oscuro */
+    -fx-effect: none;
+}
+
+
+/* Estilo para el Label que imita una bola de bingo con borde y sombra */
+.bingo-ball {
+    -fx-background-color: #4A90E2; /* Azul claro */
+    -fx-text-fill: white; /* Texto en blanco */
+    -fx-font-size: 20px;  /* Tamaño del texto */
+    -fx-font-weight: bold; /* Texto en negrita */
+    -fx-padding: 0; /* Sin padding extra */
+    -fx-border-radius: 50%; /* Bordes redondeados para hacerla circular */
+    -fx-background-radius: 50%; /* Hace que el fondo sea circular */
+    -fx-alignment: center; /* Centra el texto */
+    -fx-pref-width: 60px; /* Ancho preferido de la bola */
+    -fx-pref-height: 60px; /* Alto preferido de la bola (igual que el ancho para mantener la forma circular) */
+    -fx-min-width: 60px;  /* Tamaño mínimo */
+    -fx-min-height: 60px; /* Tamaño mínimo */
+    -fx-max-width: 60px;  /* Tamaño máximo */
+    -fx-max-height: 60px; /* Tamaño máximo */
+    -fx-cursor: hand; /* Cursor tipo mano */
+
+    /* Efecto de sombra */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0, 2, 2); /* Sombra sutil */
+}
+
+/* Opcional: Estilo para cuando el label tiene hover */
+.bingo-ball:hover {
+    -fx-background-color: #6CB8F1; /* Azul claro más brillante al pasar el ratón */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 12, 0, 3, 3); /* Sombra más pronunciada al hacer hover */
+}
+
+/* Opcional: Efecto al presionar */
+.bingo-ball:pressed {
+    -fx-background-color: #357ABD; /* Azul más oscuro al presionar */
+    -fx-effect: none; /* Sin sombra al presionar */
+}
+
+/* Estilo para el Label que imita una bola de bingo con borde y sombra */
+.bingo-ball-1 {
+    -fx-background-color: #4A90E2; /* Azul claro */
+    -fx-text-fill: white; /* Texto en blanco */
+    -fx-font-size: 40px;  /* Tamaño del texto más grande */
+    -fx-font-weight: bold; /* Texto en negrita */
+    -fx-padding: 0; /* Sin padding extra */
+    -fx-border-radius: 50%; /* Bordes redondeados para hacerla circular */
+    -fx-background-radius: 50%; /* Hace que el fondo sea circular */
+    -fx-alignment: center; /* Centra el texto */
+    -fx-pref-width: 100px; /* Ancho preferido de la bola más grande */
+    -fx-pref-height: 100px; /* Alto preferido de la bola (igual que el ancho para mantener la forma circular) */
+    -fx-min-width: 100px;  /* Tamaño mínimo */
+    -fx-min-height: 100px; /* Tamaño mínimo */
+    -fx-max-width: 100px;  /* Tamaño máximo */
+    -fx-max-height: 100px; /* Tamaño máximo */
+    -fx-cursor: hand; /* Cursor tipo mano */
+
+    /* Efecto de sombra */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0, 2, 2); /* Sombra sutil */
+}
+
+/* Opcional: Estilo para cuando el label tiene hover */
+.bingo-ball-1:hover {
+    -fx-background-color: #6CB8F1; /* Azul claro más brillante al pasar el ratón */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 12, 0, 3, 3); /* Sombra más pronunciada al hacer hover */
+}
+
+/* Opcional: Efecto al presionar */
+.bingo-ball-1:pressed {
+    -fx-background-color: #357ABD; /* Azul más oscuro al presionar */
+    -fx-effect: none; /* Sin sombra al presionar */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
