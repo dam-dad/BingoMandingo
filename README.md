@@ -24,6 +24,7 @@ El formato de los cartones físicos es el siguiente:
 
 
 En caso de no tener ninguna impresora nos aparecerá el siguiente dialogo:
+
 ![image](https://github.com/user-attachments/assets/66a3239d-9734-489c-bd02-766c48d07d0c)
 
 En este caso el juego igualmente nos dejará acceder a la partida.
