@@ -53,9 +53,11 @@ Recordemos que el ID del cartón se puede ver arriba a la izquierda en cada uno 
 
 - Botón "Comprobar Bingo": Se pulsará cuando alguno de los usuarios cante Bingo, se verificará, en caso de que no haya aparecerá el siguiente mensaje:
 
+
   ![image](https://github.com/user-attachments/assets/fbc38c83-82ad-4bf1-a08d-f36a03a07f77)
 
 En caso de que se encuentre, tendremos el siguiente mensaje: 
+
 
 ![image](https://github.com/user-attachments/assets/c986a86d-19d6-430a-98d1-ded24c1b0b63)
 
