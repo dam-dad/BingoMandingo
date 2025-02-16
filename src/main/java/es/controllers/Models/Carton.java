@@ -46,4 +46,22 @@ public class Carton {
         }
         return sb.toString();
     }
+
+    public int comprobarLineaPosicion(List<Integer> numerosGuardados) {
+        int[][] numbers = this.getNumbers();
+        for (int i = 0; i < numbers.length; i++) {
+            boolean lineaCompleta = true;
+            for (int j = 0; j < numbers[i].length; j++) {
+                if (!numerosGuardados.contains(numbers[i][j])) {
+                    lineaCompleta = false;
+                    break;
+                }
+            }
+            if (lineaCompleta) {
+                return i; // Devuelve la posición de la línea encontrada
+            }
+        }
+        return -1; // No se encontró ninguna línea
+    }
+
 }

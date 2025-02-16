@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -25,6 +26,7 @@ public class GameController implements Initializable {
     private Random random = new Random();
     private Queue<Integer> historialNumeros;
     private List<Integer> numerosGuardados = new ArrayList<>();
+    private Map<Integer, Label> bolaMap;
 
 
     @FXML
@@ -334,8 +336,97 @@ public class GameController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
-
+        bolaMap = new HashMap<>();
+        bolaMap.put(1, bolaTabla1);
+        bolaMap.put(2, bolaTabla2);
+        bolaMap.put(3, bolaTabla3);
+        bolaMap.put(4, bolaTabla4);
+        bolaMap.put(5, bolaTabla5);
+        bolaMap.put(6, bolaTabla6);
+        bolaMap.put(7, bolaTabla7);
+        bolaMap.put(8, bolaTabla8);
+        bolaMap.put(9, bolaTabla9);
+        bolaMap.put(10, bolaTabla10);
+        bolaMap.put(11, bolaTabla11);
+        bolaMap.put(12, bolaTabla12);
+        bolaMap.put(13, bolaTabla13);
+        bolaMap.put(14, bolaTabla14);
+        bolaMap.put(15, bolaTabla15);
+        bolaMap.put(16, bolaTabla16);
+        bolaMap.put(17, bolaTabla17);
+        bolaMap.put(18, bolaTabla18);
+        bolaMap.put(19, bolaTabla19);
+        bolaMap.put(20, bolaTabla20);
+        bolaMap.put(21, bolaTabla21);
+        bolaMap.put(22, bolaTabla22);
+        bolaMap.put(23, bolaTabla23);
+        bolaMap.put(24, bolaTabla24);
+        bolaMap.put(25, bolaTabla25);
+        bolaMap.put(26, bolaTabla26);
+        bolaMap.put(27, bolaTabla27);
+        bolaMap.put(28, bolaTabla28);
+        bolaMap.put(29, bolaTabla29);
+        bolaMap.put(30, bolaTabla30);
+        bolaMap.put(31, bolaTabla31);
+        bolaMap.put(32, bolaTabla32);
+        bolaMap.put(33, bolaTabla33);
+        bolaMap.put(34, bolaTabla34);
+        bolaMap.put(35, bolaTabla35);
+        bolaMap.put(36, bolaTabla36);
+        bolaMap.put(37, bolaTabla37);
+        bolaMap.put(38, bolaTabla38);
+        bolaMap.put(39, bolaTabla39);
+        bolaMap.put(40, bolaTabla40);
+        bolaMap.put(41, bolaTabla41);
+        bolaMap.put(42, bolaTabla42);
+        bolaMap.put(43, bolaTabla43);
+        bolaMap.put(44, bolaTabla44);
+        bolaMap.put(45, bolaTabla45);
+        bolaMap.put(46, bolaTabla46);
+        bolaMap.put(47, bolaTabla47);
+        bolaMap.put(48, bolaTabla48);
+        bolaMap.put(49, bolaTabla49);
+        bolaMap.put(50, bolaTabla50);
+        bolaMap.put(51, bolaTabla51);
+        bolaMap.put(52, bolaTabla52);
+        bolaMap.put(53, bolaTabla53);
+        bolaMap.put(54, bolaTabla54);
+        bolaMap.put(55, bolaTabla55);
+        bolaMap.put(56, bolaTabla56);
+        bolaMap.put(57, bolaTabla57);
+        bolaMap.put(58, bolaTabla58);
+        bolaMap.put(59, bolaTabla59);
+        bolaMap.put(60, bolaTabla60);
+        bolaMap.put(61, bolaTabla61);
+        bolaMap.put(62, bolaTabla62);
+        bolaMap.put(63, bolaTabla63);
+        bolaMap.put(64, bolaTabla64);
+        bolaMap.put(65, bolaTabla65);
+        bolaMap.put(66, bolaTabla66);
+        bolaMap.put(67, bolaTabla67);
+        bolaMap.put(68, bolaTabla68);
+        bolaMap.put(69, bolaTabla69);
+        bolaMap.put(70, bolaTabla70);
+        bolaMap.put(71, bolaTabla71);
+        bolaMap.put(72, bolaTabla72);
+        bolaMap.put(73, bolaTabla73);
+        bolaMap.put(74, bolaTabla74);
+        bolaMap.put(75, bolaTabla75);
+        bolaMap.put(76, bolaTabla76);
+        bolaMap.put(77, bolaTabla77);
+        bolaMap.put(78, bolaTabla78);
+        bolaMap.put(79, bolaTabla79);
+        bolaMap.put(80, bolaTabla80);
+        bolaMap.put(81, bolaTabla81);
+        bolaMap.put(82, bolaTabla82);
+        bolaMap.put(83, bolaTabla83);
+        bolaMap.put(84, bolaTabla84);
+        bolaMap.put(85, bolaTabla85);
+        bolaMap.put(86, bolaTabla86);
+        bolaMap.put(87, bolaTabla87);
+        bolaMap.put(88, bolaTabla88);
+        bolaMap.put(89, bolaTabla89);
+        bolaMap.put(90, bolaTabla90);
     }
 
     public void setJugadores(List<Player> jugadores) {
@@ -694,14 +785,90 @@ public class GameController implements Initializable {
 
     @FXML
     void onComprobarBingoAction(ActionEvent event) {
+        boolean bingoEncontrado = false;
 
+        // Iterar sobre todos los jugadores para comprobar sus cartones
+        for (Player player : players) {
+            Carton carton = player.getCarton();
+            if (carton != null && comprobarCartonCompleto(carton, numerosGuardados)) {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("¡BINGO!");
+                alert.setHeaderText(null);
+                alert.setContentText("¡BINGO! El jugador con el ID de cartón: " + carton.getId() + " ha completado el cartón.");
+                alert.showAndWait();
+                bingoEncontrado = true;
+            }
+        }
+
+        // Si no se encuentra ningún cartón completo
+        if (!bingoEncontrado) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("No se ha encontrado BINGO");
+            alert.setHeaderText(null);
+            alert.setContentText("Ningún jugador ha completado su cartón.");
+            alert.showAndWait();
+        } else {
+            // Resetear las imágenes después de un bingo
+            resetearImagenes();
+            // Limpiar la lista numerosGuardados
+            numerosGuardados.clear(); //
+        }
+    }
+
+    // Metodo para resetear las imágenes de los labels
+    private void resetearImagenes() {
+        // Recorrer todas las bolas en el mapa
+        for (Label label : bolaMap.values()) {
+            if (label.getProperties().containsKey("marked")) {
+                // Eliminar la propiedad "marked"
+                label.getProperties().remove("marked");
+
+                // Restablecer la imagen a la original
+                ImageView imageView = new ImageView(new Image(getClass().getResourceAsStream("/images/contenedorNumero.png")));
+                imageView.setFitHeight(73.0);
+                imageView.setFitWidth(38.0);
+                imageView.setPickOnBounds(true);
+                imageView.setPreserveRatio(true);
+                label.setGraphic(imageView);
+            }
+        }
+    }
+
+
+    // Metodo para comprobar si el cartón está completamente marcado
+    private boolean comprobarCartonCompleto(Carton carton, List<Integer> numerosGuardados) {
+        int[][] numbers = carton.getNumbers();
+        int rows = 5; // Número de filas (5x5)
+        int cols = 5; // Número de columnas (5x5)
+        int centralRow = 2; // Índice de la fila central (5 / 2)
+        int centralCol = 2; // Índice de la columna central (5 / 2)
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                // Ignorar el número central (comodín)
+                if (i == centralRow && j == centralCol) {
+                    continue;
+                }
+
+                // Si algún número no está en numerosGuardados, no hay BINGO
+                if (!numerosGuardados.contains(numbers[i][j])) {
+                    return false;
+                }
+            }
+        }
+        return true; // Si todos los números están marcados, hay BINGO
     }
 
     @FXML
     void onComprobarLineaAction(ActionEvent event) {
-        boolean lineaEncontrada = false;
+        // Mostrar los números guardados en la consola
+        System.out.println("Números guardados: " + numerosGuardados);
+
+        boolean coincidenciaEncontrada = false;
+
         for (Player player : players) {
             Carton carton = player.getCarton();
+<<<<<<< Updated upstream
             if (carton != null && (carton.comprobarLinea(numerosGuardados) || comprobarColumna(carton, numerosGuardados))) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Línea o Columna Encontrada");
@@ -710,9 +877,34 @@ public class GameController implements Initializable {
                 alert.showAndWait();
                 lineaEncontrada = true;
                 break;
+=======
+            if (carton != null) {
+                // Comprobar líneas
+                int lineaCoincidente = carton.comprobarLineaPosicion(numerosGuardados);
+                if (lineaCoincidente != -1) {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Línea Encontrada");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Línea encontrada en la fila " + (lineaCoincidente + 1) + " del cartón con ID: " + carton.getId());
+                    alert.showAndWait();
+                    coincidenciaEncontrada = true;
+                }
+
+                // Comprobar columnas
+                int columnaCoincidente = comprobarColumnaPosicion(carton, numerosGuardados);
+                if (columnaCoincidente != -1) {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Columna Encontrada");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Columna encontrada en la columna " + (columnaCoincidente + 1) + " del cartón con ID: " + carton.getId());
+                    alert.showAndWait();
+                    coincidenciaEncontrada = true;
+                }
+>>>>>>> Stashed changes
             }
         }
-        if (!lineaEncontrada) {
+
+        if (!coincidenciaEncontrada) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("No se encontró Línea o Columna");
             alert.setHeaderText(null);
@@ -721,7 +913,8 @@ public class GameController implements Initializable {
         }
     }
 
-    private boolean comprobarColumna(Carton carton, List<Integer> numerosGuardados) {
+
+    private int comprobarColumnaPosicion(Carton carton, List<Integer> numerosGuardados) {
         int[][] numbers = carton.getNumbers();
         for (int j = 0; j < numbers[0].length; j++) {
             boolean columnaCompleta = true;
@@ -732,9 +925,10 @@ public class GameController implements Initializable {
                 }
             }
             if (columnaCompleta) {
-                return true;
+                return j; // Devuelve la posición de la columna encontrada
             }
         }
-        return false;
+        return -1; // No se encontró ninguna columna
     }
+
 }
