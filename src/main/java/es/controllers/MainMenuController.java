@@ -136,7 +136,8 @@ public class MainMenuController implements Initializable {
                             System.out.println("Jugador: " + player.getNombre() + " " + player.getApellido() + " - Cartón asignado: " + player.getCarton().toString());
 
                         }
-
+                        //Pasamos la lista de jugadores al controlador del juego
+                        gc.setJugadores(listaJugadores.getItems());
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     } catch (PrinterException e) {

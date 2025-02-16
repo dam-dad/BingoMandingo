@@ -19,6 +19,22 @@ public class Carton {
         return numbers;
     }
 
+    public boolean comprobarLinea(List<Integer> numerosMarcados) {
+        for (int i = 0; i < numbers.length; i++) {
+            boolean lineaCompleta = true;
+            for (int j = 0; j < numbers[i].length; j++) {
+                if (!numerosMarcados.contains(numbers[i][j])) {
+                    lineaCompleta = false;
+                    break;
+                }
+            }
+            if (lineaCompleta) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("id" + id + " numeros=\n");

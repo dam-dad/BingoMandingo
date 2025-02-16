@@ -1,10 +1,13 @@
 package es.controllers;
 
 import es.App;
+import es.controllers.Models.Carton;
+import es.controllers.Models.Player;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -15,6 +18,13 @@ import java.net.URL;
 import java.util.*;
 
 public class GameController implements Initializable {
+
+    private List<Player> players = new ArrayList<>();
+    private List<Integer> numerosSalidos = new ArrayList<>();
+    private List<Integer> numerosGenerados = new ArrayList<>();
+    private Random random = new Random();
+    private Queue<Integer> historialNumeros;
+
 
     @FXML
     private BorderPane root;
@@ -310,12 +320,6 @@ public class GameController implements Initializable {
     @FXML
     private ImageView imagebola1;
 
-    //Generar numeros aleatorios
-    private List<Integer> numerosGenerados = new ArrayList<>();
-    private Random random = new Random();
-
-    private Queue<Integer> historialNumeros;
-
     public GameController() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/GameView.fxml"));
@@ -333,15 +337,21 @@ public class GameController implements Initializable {
 
     }
 
+    public void setJugadores(List<Player> jugadores) {
+        this.players = players;
+    }
+
     public BorderPane getRoot() {
         return root;
     }
 
     @FXML
-    private void actualizarNumeros() {
+    public void actualizarNumeros() {
         // Generar un número aleatorio
         // Números del 1 al 90
         int nuevoNumero = generarNumeroUnico();
+        numerosGenerados.add(nuevoNumero); // Agregar el número generado a la lista
+
 
         // Actualizar las etiquetas del historial
         num5HistLabel.setText(num4HistLabel.getText());
@@ -670,6 +680,9 @@ public class GameController implements Initializable {
             imageView.setPickOnBounds(true);
             imageView.setPreserveRatio(true);
             label.setGraphic(imageView);
+
+            label.getProperties().put("marked", true); // Establecer propiedad personalizada
+
         }
     }
 
@@ -680,6 +693,42 @@ public class GameController implements Initializable {
 
     @FXML
     void onComprobarLineaAction(ActionEvent event) {
+        boolean lineaEncontrada = false;
+        for (Player player : players) {
+            Carton carton = player.getCarton();
+            if (carton != null && (carton.comprobarLinea(numerosGenerados) || comprobarColumna(carton, numerosGenerados))) {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Línea o Columna Encontrada");
+                alert.setHeaderText(null);
+                alert.setContentText("Se ha encontrado una línea o columna en el jugador con ID de cartón: " + carton.getId());
+                alert.showAndWait();
+                lineaEncontrada = true;
+                break;
+            }
+        }
+        if (!lineaEncontrada) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("No se encontró Línea o Columna");
+            alert.setHeaderText(null);
+            alert.setContentText("No se ha encontrado ninguna línea o columna.");
+            alert.showAndWait();
+        }
+    }
 
+    private boolean comprobarColumna(Carton carton, List<Integer> numerosGenerados) {
+        int[][] numbers = carton.getNumbers();
+        for (int j = 0; j < numbers[0].length; j++) {
+            boolean columnaCompleta = true;
+            for (int i = 0; i < numbers.length; i++) {
+                if (!numerosGenerados.contains(numbers[i][j])) {
+                    columnaCompleta = false;
+                    break;
+                }
+            }
+            if (columnaCompleta) {
+                return true;
+            }
+        }
+        return false;
     }
 }
