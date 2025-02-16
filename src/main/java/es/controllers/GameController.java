@@ -24,6 +24,7 @@ public class GameController implements Initializable {
     private List<Integer> numerosGenerados = new ArrayList<>();
     private Random random = new Random();
     private Queue<Integer> historialNumeros;
+    private List<Integer> numerosGuardados = new ArrayList<>();
 
 
     @FXML
@@ -338,7 +339,7 @@ public class GameController implements Initializable {
     }
 
     public void setJugadores(List<Player> jugadores) {
-        this.players = players;
+        this.players = jugadores;
     }
 
     public BorderPane getRoot() {
@@ -347,11 +348,16 @@ public class GameController implements Initializable {
 
     @FXML
     public void actualizarNumeros() {
-        // Generar un número aleatorio
-        // Números del 1 al 90
-        int nuevoNumero = generarNumeroUnico();
-        numerosGenerados.add(nuevoNumero); // Agregar el número generado a la lista
+        if (numerosGenerados.size() >= 90) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Advertencia");
+            alert.setHeaderText(null);
+            alert.setContentText("Todos los números del 1 al 90 ya han sido generados.");
+            alert.showAndWait();
+            return;
+        }
 
+        int nuevoNumero = generarNumeroUnico();
 
         // Actualizar las etiquetas del historial
         num5HistLabel.setText(num4HistLabel.getText());
@@ -368,16 +374,16 @@ public class GameController implements Initializable {
     }
 
     private int generarNumeroUnico() {
-        if (numerosGenerados.size() >= 90) {
+        if (numerosGuardados.size() >= 90) {
             throw new IllegalStateException("Todos los números del 1 al 90 ya han sido generados.");
         }
 
         int numero;
         do {
             numero = random.nextInt(90) + 1;
-        } while (numerosGenerados.contains(numero));
+        } while (numerosGuardados.contains(numero));
 
-        numerosGenerados.add(numero);
+        numerosGuardados.add(numero);
         return numero;
     }
 
@@ -696,7 +702,7 @@ public class GameController implements Initializable {
         boolean lineaEncontrada = false;
         for (Player player : players) {
             Carton carton = player.getCarton();
-            if (carton != null && (carton.comprobarLinea(numerosGenerados) || comprobarColumna(carton, numerosGenerados))) {
+            if (carton != null && (carton.comprobarLinea(numerosGuardados) || comprobarColumna(carton, numerosGuardados))) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Línea o Columna Encontrada");
                 alert.setHeaderText(null);
@@ -715,12 +721,12 @@ public class GameController implements Initializable {
         }
     }
 
-    private boolean comprobarColumna(Carton carton, List<Integer> numerosGenerados) {
+    private boolean comprobarColumna(Carton carton, List<Integer> numerosGuardados) {
         int[][] numbers = carton.getNumbers();
         for (int j = 0; j < numbers[0].length; j++) {
             boolean columnaCompleta = true;
             for (int i = 0; i < numbers.length; i++) {
-                if (!numerosGenerados.contains(numbers[i][j])) {
+                if (!numerosGuardados.contains(numbers[i][j])) {
                     columnaCompleta = false;
                     break;
                 }
