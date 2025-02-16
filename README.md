@@ -10,7 +10,8 @@ En el menú principal tendremos la opcion de Jugar, para dar inicio a la configu
 ![image](https://github.com/user-attachments/assets/56cdb058-250d-436f-b44f-ce406bdf77e2)
 
 
-En la configuración de los jugadores podremos añadir cada integrante de la partida, poniendo su nombre y apelido, una vez hecho esto haremos click en continuar.
+En la configuración de los jugadores podremos añadir cada integrante de la partida, poniendo su nombre y apelido, una vez hecho esto clickaremos en continuar.
+
 ![image](https://github.com/user-attachments/assets/aaa8fcfb-0b7e-44a2-adad-9649458c3d90)
 
 Al continuar nos aparecerá una ventana para configurar la impresora que queremos usar para imprimir los cartones de Bingo, una vez seleccionada si damos a aceptar empezarán a imprimirse nuestros cartones y se abrirá la vista de la partida.
