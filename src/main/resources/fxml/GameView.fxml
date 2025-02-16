@@ -59,8 +59,10 @@
                <children>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
                      <children>
-                        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" text="Pausar Juego" HBox.hgrow="ALWAYS" />
-                        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onResumeAction" text="Reanudar JUego" HBox.hgrow="ALWAYS" />
+                        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onResumeAction" text="NÚMERO SIGUIENTE" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font size="24.0" />
+                           </font></Button>
                      </children>
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />

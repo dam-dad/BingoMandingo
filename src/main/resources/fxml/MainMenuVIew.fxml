@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1">
-   <top>
-      <Label text="Menu Principal" BorderPane.alignment="CENTER" />
-   </top>
+<BorderPane fx:id="root" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" styleClass="mainMenu" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1">
    <center>
-      <VBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" spacing="10.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="gameButton" mnemonicParsing="false" onAction="#onGameViewAction" text="Game VIew" />
-            <Button fx:id="scoreButton" mnemonicParsing="false" onAction="#onScoreAction" text="Puntuaciones" />
+            <ImageView fitHeight="200.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/mainMenu/BingoLogo.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="gameButton" minHeight="50.0" minWidth="150.0" mnemonicParsing="false" onAction="#onGameViewAction" text="Game VIew" />
          </children>
       </VBox>
    </center>

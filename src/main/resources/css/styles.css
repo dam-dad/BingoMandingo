@@ -5,7 +5,42 @@
 .gameBordePane {
     -fx-background-image: url("../images/gameViewBackground.png");
     -fx-background-size: cover;
+}
+
+
+.mainMenu {
+    -fx-background-image: url("../images/mainMenu/mainMenuWallpaper.png");
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
 
 }
+
+
+/* Estilo para los botones del menu de incio */
+.button {
+    -fx-background-color: #4A90E2; /* Azul claro */
+    -fx-text-fill: white; /* Texto en blanco */
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-border-width: 2px;
+    -fx-border-color: transparent;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.15), 5, 0, 2, 2);
+    -fx-transition: 0.3s;
+}
+
+.button:hover {
+    -fx-background-color: #4285F4; /* Azul más vibrante */
+}
+
+.button:pressed {
+    -fx-background-color: #357ABD; /* Azul más oscuro */
+    -fx-effect: none;
+}
+
+
 
 

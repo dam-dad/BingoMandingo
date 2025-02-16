@@ -3,7 +3,6 @@ package es.controllers;
 import es.App;
 import es.controllers.Models.BingoGenerator;
 import es.controllers.Models.Player;
-import es.controllers.Scoreboard.NavMenuController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -29,7 +28,6 @@ public class MainMenuController implements Initializable {
     private Button scoreButton;
 
     private GameController gc = new GameController();
-    private NavMenuController nc = new NavMenuController();
 
     public MainMenuController() {
         try {
@@ -140,12 +138,5 @@ public class MainMenuController implements Initializable {
                 }
             }
         });
-    }
-
-
-
-    @FXML
-    private void onScoreAction() {
-        App.getRc().getRoot().setCenter(nc.getRoot());
     }
 }
