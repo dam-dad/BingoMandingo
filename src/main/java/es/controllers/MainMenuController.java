@@ -1,6 +1,7 @@
 package es.controllers;
 
 import es.App;
+import es.MetodosImpresion;
 import es.controllers.Models.BingoGenerator;
 import es.controllers.Models.Player;
 import es.controllers.Scoreboard.NavMenuController;
@@ -13,6 +14,8 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.geometry.Insets;
 
+import javax.print.PrintService;
+import java.awt.print.PrinterException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -30,6 +33,7 @@ public class MainMenuController implements Initializable {
 
     private GameController gc = new GameController();
     private NavMenuController nc = new NavMenuController();
+
 
     public MainMenuController() {
         try {
@@ -118,6 +122,14 @@ public class MainMenuController implements Initializable {
                         bingoGenerator.generarCartones(numCartones);
                         bingoGenerator.guardarCartonesEnExcel();
 
+
+                        //imprimir cartones
+                        MetodosImpresion.convertXlsxToPdf("src/main/resources/TablasBingo.xlsx", "src/main/resources/TablasBingo.pdf");
+                        PrintService printer = MetodosImpresion.choosePrinter();
+                        if (printer != null) {
+                            MetodosImpresion.imprimir("src/main/resources/TablasBingo.pdf", printer);
+                        }
+
                         //asignar cartones a cada jugador
                         for (int i = 0; i< listaJugadores.getItems().size(); i++) {
 
@@ -128,6 +140,8 @@ public class MainMenuController implements Initializable {
                         }
 
                     } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    } catch (PrinterException e) {
                         throw new RuntimeException(e);
                     }
                     // Procesar los jugadores y avanzar
