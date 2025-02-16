@@ -31,6 +31,7 @@ public class MainMenuController implements Initializable {
     private Button scoreButton;
 
     private GameController gc = new GameController();
+    private static ListView<Player> listaJugadores = new ListView<>();
 
 
     public MainMenuController() {
@@ -65,7 +66,6 @@ public class MainMenuController implements Initializable {
         content.setPadding(new Insets(10));
 
         Label instruccionesLabel = new Label("Introduce el nombre y apellido de los jugadores:");
-        ListView<Player> listaJugadores = new ListView<>();
         TextField nombreField = new TextField();
         nombreField.setPromptText("Nombre");
         TextField apellidoField = new TextField();
@@ -153,5 +153,9 @@ public class MainMenuController implements Initializable {
                 }
             }
         });
+    }
+
+    public static ListView<Player> getListaJugadores() {
+        return listaJugadores;
     }
 }

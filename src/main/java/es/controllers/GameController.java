@@ -706,7 +706,7 @@ public class GameController implements Initializable {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Línea o Columna Encontrada");
                 alert.setHeaderText(null);
-                alert.setContentText("Se ha encontrado una línea o columna en el jugador con ID de cartón: " + carton.getId());
+                alert.setContentText("Se ha encontrado una línea.\n \nJugador " + player.getNombre().toUpperCase() + " " + player.getNombre().toUpperCase() +  "\nID de cartón: " + carton.getId());
                 alert.showAndWait();
                 lineaEncontrada = true;
                 break;
