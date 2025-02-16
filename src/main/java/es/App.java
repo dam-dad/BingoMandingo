@@ -15,7 +15,7 @@ public class App extends Application {
         rc = new RootController();
 
         primaryStage.setTitle("Bingo Mandingo");
-        Scene scene = new Scene(rc.getRoot(), 600, 400);
+        Scene scene = new Scene(rc.getRoot(), 1200, 700);
         primaryStage.setScene(scene);
         scene.getStylesheets().add("/css/styles.css");
         primaryStage.show();
