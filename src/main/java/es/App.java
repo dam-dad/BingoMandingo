@@ -17,7 +17,7 @@ public class App extends Application {
         primaryStage.setTitle("Bingo Mandingo");
         Scene scene = new Scene(rc.getRoot(), 1200, 700);
         primaryStage.setScene(scene);
-        scene.getStylesheets().add("/css/styles.css");
+        scene.getStylesheets().add(getClass().getResource("/css/styles.css").toExternalForm());
         primaryStage.show();
 
     }

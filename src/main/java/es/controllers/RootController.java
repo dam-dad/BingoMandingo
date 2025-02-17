@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class RootController implements Initializable{
+public class RootController implements Initializable {
 
     MainMenuController mmc;
 
@@ -19,6 +19,8 @@ public class RootController implements Initializable{
     public RootController() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/RootView.fxml"));
+            System.out.println("FXMLLOCATION: " + loader.getLocation());
+            loader.setClassLoader(getClass().getClassLoader());
             loader.setController(this);
             loader.load();
         } catch (IOException e) {

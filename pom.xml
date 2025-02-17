@@ -17,6 +17,13 @@
         </repository>
     </repositories>
 
+    <properties>
+        <maven.compiler.source>22</maven.compiler.source>
+        <maven.compiler.target>22</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <exec.mainClass>es.Main</exec.mainClass>
+    </properties>
+
 
     <dependencies>
         <!-- Dependencias javafx -->
@@ -61,17 +68,31 @@
     <build>
         <plugins>
             <plugin>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <configuration>
-                    <archive>
-                        <manifest>
+                <groupId>io.github.fvarrui</groupId>
+                <artifactId>javapackager</artifactId>
+                <version>1.7.6</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>package</goal>
+                        </goals>
+                        <configuration>
                             <mainClass>es.Main</mainClass>
-                        </manifest>
-                    </archive>
-                    <descriptorRefs>
-                        <descriptorRef>jar-with-dependencies</descriptorRef>
-                    </descriptorRefs>
-                </configuration>
+                            <bundleJre>true</bundleJre>
+                            <copyDependencies>true</copyDependencies>
+                            <customizedJre>false</customizedJre>
+                            <generateInstaller>true</generateInstaller>
+                            <administratorRequired>false</administratorRequired>
+                            <platform>windows</platform>
+                            <winConfig>
+                                <!--<icoFile>installerAssets/windows/favicon.ico</icoFile>-->
+                                <generateSetup>true</generateSetup>
+                                <wrapJar>true</wrapJar>
+                            </winConfig>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
