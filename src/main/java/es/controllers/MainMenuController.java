@@ -16,7 +16,9 @@ import javafx.geometry.Insets;
 import javax.print.PrintService;
 import java.awt.print.PrinterException;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class MainMenuController implements Initializable {
@@ -110,7 +112,7 @@ public class MainMenuController implements Initializable {
                     alertaError.showAndWait();
                 } else {
                     try{
-                        BingoGenerator bingoGenerator = new BingoGenerator("src/main/resources/TablasBingo.xlsx");
+                        BingoGenerator bingoGenerator = new BingoGenerator(Objects.requireNonNull(getClass().getResource("/resources/TablasBingo.xlsx")).toURI().getPath());
 
                         //limpiar excel antes de escribir
                         bingoGenerator.limpiarExcel();
@@ -122,10 +124,10 @@ public class MainMenuController implements Initializable {
 
 
                         //imprimir cartones
-                        MetodosImpresion.convertXlsxToPdf("src/main/resources/TablasBingo.xlsx", "src/main/resources/TablasBingo.pdf");
+                        MetodosImpresion.convertXlsxToPdf(Objects.requireNonNull(getClass().getResource("/resources/TablasBingo.xlsx")).toURI().getPath(), Objects.requireNonNull(getClass().getResource("/resources/TablasBingo.pdf")).toURI().getPath());
                         PrintService printer = MetodosImpresion.choosePrinter();
                         if (printer != null) {
-                            MetodosImpresion.imprimir("src/main/resources/TablasBingo.pdf", printer);
+                            MetodosImpresion.imprimir(Objects.requireNonNull(getClass().getResource("/resources/TablasBingo.pdf")).toURI().getPath(), printer);
                         }
 
                         //asignar cartones a cada jugador
@@ -141,6 +143,8 @@ public class MainMenuController implements Initializable {
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     } catch (PrinterException e) {
+                        throw new RuntimeException(e);
+                    } catch (URISyntaxException e) {
                         throw new RuntimeException(e);
                     }
                     // Procesar los jugadores y avanzar
