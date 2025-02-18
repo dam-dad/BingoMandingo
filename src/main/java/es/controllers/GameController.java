@@ -797,6 +797,16 @@ public class GameController implements Initializable {
                 alert.setContentText("¡BINGO! El jugador " + player.getNombre() + " " + player.getApellido() +  " con el ID de cartón: " + carton.getId() + " ha completado el cartón.");
                 alert.showAndWait();
                 bingoEncontrado = true;
+
+                // Actualizar las etiquetas del historial
+                num5HistLabel.setText("0");
+                num4HistLabel.setText("0");
+                num3HistLabel.setText("0");
+                num2HistLabel.setText("0");
+                num1HistLabel.setText("0");
+
+                // Mostrar el nuevo número en la etiqueta actual
+                numeroActual.setText("0");
             }
         }
 
